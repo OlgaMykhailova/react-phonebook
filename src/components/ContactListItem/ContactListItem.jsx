@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Notify } from 'notiflix';
-import { deleteContact } from '../../redux/operations';
+import { deleteContact } from '../../redux/contacts/contactsOperations';
 import { Button, ListItem, Text } from './ContactListItem.styled';
 
 export const ContactListItem = ({ id, name, number }) => {

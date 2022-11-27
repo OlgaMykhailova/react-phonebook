@@ -1,35 +1,51 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
-import { Notify } from 'notiflix';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
+import { useEffect, lazy } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+import { refreshUser } from 'redux/auth/authOperations';
+import { useAuth } from 'hooks';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    <div className="container">
-      {error && Notify.failure(`${error}`)}
-      {isLoading && !error && <h2>Loading...</h2>}
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {contacts.length > 0 ? (
-        <ContactList />
-      ) : (
-        <h2>You have no added contacts yet</h2>
-      )}
-    </div>
+  return isRefreshing ? (
+    <b>Refreshing User...</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />}/>
+        <Route path='/register' element={<RestrictedRoute redirectTo='/contacts' component={<RegisterPage />} />} />
+        <Route path='/login' element={<RestrictedRoute redirectTo='/contacts' component={<LoginPage />} />} />
+        <Route path='/contacts' element={<PrivateRoute redirectTo='/login' component={<ContactsPage />} />} />
+      </Route>
+    </Routes>
   );
+  // (
+
+  // <div className="container">
+  //   {error && Notify.failure(`${error}`)}
+  //   {isLoading && !error && <h2>Loading...</h2>}
+  //   <h1>Phonebook</h1>
+  //   <ContactForm />
+  //   <h2>Contacts</h2>
+  //   <Filter />
+  //   {contacts.length > 0 ? (
+  //     <ContactList />
+  //   ) : (
+  //     <h2>You have no added contacts yet</h2>
+  //   )}
+  // </div>
+  // );
 };
