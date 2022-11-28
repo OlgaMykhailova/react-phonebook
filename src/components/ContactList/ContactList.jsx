@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { ContactListItem } from 'components/ContactListItem/ContactListItem';
+import { ContactListItem } from '../ContactListItem/ContactListItem';
 import { List } from './ContactList.styled';
-import { selectContacts } from 'redux/contacts/contactsSelectors';
-import { selectFilter } from 'redux/filter/filterSelectors';
+import { selectContacts } from '../../redux/contacts/contactsSelectors';
+import { selectFilter } from '../../redux/filter/filterSelectors';
 
 export const ContactList = () => {
   const filter = useSelector(selectFilter);
@@ -24,7 +24,7 @@ export const ContactList = () => {
         <ContactListItem
           key={contact.id}
           name={contact.name}
-          number={contact.phone}
+          number={contact.number}
           id={contact.id}
         />
       ))}

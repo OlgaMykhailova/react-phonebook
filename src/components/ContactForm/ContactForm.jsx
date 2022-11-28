@@ -2,8 +2,8 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Notify } from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/contacts/contactsSelectors';
-import { addContact } from 'redux/contacts/contactsOperations';
+import { selectContacts } from '../../redux/contacts/contactsSelectors';
+import { addContact } from '../../redux/contacts/contactsOperations';
 
 import {
   Form,
@@ -33,7 +33,7 @@ export const ContactForm = () => {
     const newName = {
       createdAt: new Date(),
       name: values.name,
-      phone: values.number,
+      number: values.number,
     }
     const newContactNameNormalized = values.name.toLowerCase();
     const findContact = contacts.find(
