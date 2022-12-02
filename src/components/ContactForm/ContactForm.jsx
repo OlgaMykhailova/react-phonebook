@@ -4,16 +4,9 @@ import { Notify } from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
+import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
 
-import {
-  Form,
-  Label,
-  Text,
-  Field,
-  Button,
-  ErrorMessage,
-} from './ContactFormStyled';
-
+import { Form, Field, ErrorMessage } from 'formik';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -34,15 +27,15 @@ export const ContactForm = () => {
       createdAt: new Date(),
       name: values.name,
       number: values.number,
-    }
+    };
     const newContactNameNormalized = values.name.toLowerCase();
     const findContact = contacts.find(
       contact => contact.name.toLowerCase() === newContactNameNormalized
     );
-    const handleAddContact = (newName) => {
+    const handleAddContact = newName => {
       Notify.success(`${values.name} has been added to your contacts`);
-      dispatch(addContact(newName))
-    }
+      dispatch(addContact(newName));
+    };
     findContact
       ? Notify.warning(`${values.name} is already in contacts`)
       : handleAddContact(newName);
@@ -50,24 +43,50 @@ export const ContactForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={schema}
-    >
-      <Form>
-        <Label>
-          <Text>Name</Text>
-          <Field type="text" name="name"></Field>
-          <ErrorMessage name="name" component="span"></ErrorMessage>
-        </Label>
-        <Label>
-          <Text>Number</Text>
-          <Field type="tel" name="number"></Field>
-          <ErrorMessage name="number" component="span"></ErrorMessage>
-        </Label>
-        <Button type="submit">Add contact</Button>
-      </Form>
-    </Formik>
+    <Flex alignItems="center" justifyContent="center">
+      <Box minW="400px" minH='380px' boxShadow="dark-lg" p="5" borderRadius='lg'>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={schema}
+        >
+          <Form>
+            <FormLabel m='0'>
+              <Text display="block" py="2" fontSize="3xl">
+                Name
+              </Text>
+              <Input
+                as={Field}
+                variant="filled"
+                size="lg"
+                type="text"
+                name="name"
+                placeholder="Enter contact name"
+              ></Input>
+              <ErrorMessage name="name" component="span"></ErrorMessage>
+            </FormLabel>
+            <FormLabel m='0'>
+              <Text display="block" py="2" fontSize="3xl">
+                Number
+              </Text>
+              <Input
+                as={Field}
+                variant="filled"
+                size="lg"
+                type="tel"
+                name="number"
+                placeholder="Enter phone number"
+              ></Input>
+              <ErrorMessage name="number" component="span"></ErrorMessage>
+            </FormLabel>
+            <Flex justifyContent="center" mt='12'>
+              <Button variant="outline" colorScheme='black' type="submit" fontWeight='normal' bg='teal.400' fontSize="2xl" _hover={{ color: 'white' }} transition='color 250ms cubic-bezier(0.4, 0, 0.2, 1)'>
+                Add contact
+              </Button>
+            </Flex>
+          </Form>
+        </Formik>
+      </Box>
+    </Flex>
   );
 };

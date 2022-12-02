@@ -1,15 +1,14 @@
 import { useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { ContactListItem } from '../ContactListItem/ContactListItem';
-import { List } from './ContactList.styled';
+import { List, Box, Flex } from '@chakra-ui/react';
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { selectFilter } from '../../redux/filter/filterSelectors';
 
 export const ContactList = () => {
   const filter = useSelector(selectFilter);
   const contacts = useSelector(selectContacts);
-  
-   
+
   const getVisibleContacts = () => {
     const normalizedFilter = filter.toLowerCase();
 
@@ -19,16 +18,22 @@ export const ContactList = () => {
   };
 
   return (
-    <List>
-      {getVisibleContacts().map(contact => (
-        <ContactListItem
-          key={contact.id}
-          name={contact.name}
-          number={contact.number}
-          id={contact.id}
-        />
-      ))}
-    </List>
+    <Flex justifyContent="center">
+      <Box minW="600px">
+        <Flex justifyContent="center">
+          <List p="12">
+            {getVisibleContacts().map(contact => (
+              <ContactListItem
+                key={contact.id}
+                name={contact.name}
+                number={contact.number}
+                id={contact.id}
+              />
+            ))}
+          </List>
+        </Flex>
+      </Box>
+    </Flex>
   );
 };
 

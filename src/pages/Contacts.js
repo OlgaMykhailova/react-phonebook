@@ -5,6 +5,7 @@ import { fetchContacts } from '../redux/contacts/contactsOperations';
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import { Heading } from '@chakra-ui/react';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function Contacts() {
 
   return (
     <>
-      <h2>Your Contacts</h2>
+      <Heading as='h2' size='xl' textAlign='center' mb='7'>Contacts</Heading>
       <ContactForm></ContactForm>
       <div>{isLoading && 'Request in progress'}</div>
       <Filter></Filter>
