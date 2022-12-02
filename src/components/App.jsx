@@ -22,7 +22,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Container maxW="container.lg" minH='container.md' minW={['450px', null, '800px', null]} p='7' boxShadow='dark-lg' bg='teal.300'>
+    <Container maxW="container.lg" minH='container.lg' minW={['450px', null, '800px', null]} p='7' boxShadow='dark-lg' bg='teal.300'>
       {isRefreshing ? <b>Refreshing User...</b> : (
       <Routes>
         <Route path="/" element={<Layout />}>
