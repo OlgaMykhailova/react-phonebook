@@ -1,7 +1,7 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { Container } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -31,7 +31,14 @@ export const App = () => {
       bg="teal.300"
     >
       {isRefreshing ? (
-        <b>Refreshing User...</b>
+                  <Heading
+                  as="h2"
+                  fontSize={['lg', null, '4xl', null]}
+                  textAlign="center"
+                  mb="7"
+                >
+                Refreshing user...
+                </Heading>
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
