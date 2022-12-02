@@ -1,5 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import {
+  Button,
+  Flex,
+  FormLabel,
+  Text,
+  Box,
+  Input,
+  Link,
+} from '@chakra-ui/react';
 import { register } from 'redux/auth/authOperations';
 
 export const RegisterForm = () => {
@@ -72,9 +81,10 @@ export const RegisterForm = () => {
               placeholder="Enter your password"
             ></Input>
           </FormLabel>
-          <Flex justifyContent="center" mt="5">
+          <Flex justifyContent="center" >
             <Button
               size="sm"
+              mt="8"
               variant="outline"
               colorScheme="black"
               fontWeight="normal"
@@ -87,6 +97,18 @@ export const RegisterForm = () => {
               Register
             </Button>
           </Flex>
+          <Text textAlign="center" mt='4'>
+            Already registered?
+            <Link
+              as={NavLink}
+              to="/login"
+              ml='2'
+              _hover={{ color: 'white' }}
+              transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+            >
+              Sign in
+            </Link>
+          </Text>
         </form>
       </Box>
     </Flex>

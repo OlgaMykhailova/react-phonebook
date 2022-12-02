@@ -2,13 +2,9 @@ import { extendTheme } from '@chakra-ui/react';
 import '@fontsource/caveat';
 
 export const theme = extendTheme({
-  NavLink: {   
-      _hover: {
-        color: "teal.500",
-     
-    },
-  },
+
   fonts: { body: `"Caveat", cursive`, heading: `"Caveat", cursive` },
+
   styles: {
     global: {
       body: {

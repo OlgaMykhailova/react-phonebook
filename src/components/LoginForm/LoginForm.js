@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import { Button, Flex, FormLabel, Text, Box, Input, Link } from '@chakra-ui/react';
 import { logIn } from 'redux/auth/authOperations';
 
 export const LoginForm = () => {
@@ -68,6 +69,18 @@ export const LoginForm = () => {
             LogIn
           </Button>
          </Flex>
+         <Text textAlign="center" mt='4'>
+         Don't have an account?
+            <Link
+              as={NavLink}
+              to="/register"
+              ml='2'
+              _hover={{ color: 'white' }}
+              transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+            >
+              Sign up
+            </Link>
+          </Text>
         </form>
       </Box>
     </Flex>

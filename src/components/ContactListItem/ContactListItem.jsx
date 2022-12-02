@@ -11,7 +11,7 @@ export const ContactListItem = ({ id, name, number }) => {
     dispatch(deleteContact(id));
   };
   return (
-    <ListItem key={id} minW='500px'>
+    <ListItem key={id} minW='470px'>
       <Flex justifyContent='space-between' alignItems='center'>
                 <Text >
           Name: 

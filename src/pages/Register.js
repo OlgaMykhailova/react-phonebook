@@ -6,6 +6,6 @@ export default function Register() {
     <div>
       <Heading as='h2' size='xl' textAlign='center' mb='7'>Registration</Heading>
       <RegisterForm />
-    </div>
+          </div>
   );
 }

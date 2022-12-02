@@ -11,7 +11,7 @@ export const Filter = () => {
   return (
     
       <Flex justifyContent='center'>
-        <Box minW='550px' m='0'>
+        <Box minW='480px' m='0'>
       <FormLabel m='0'>
         <Text py='12'  fontSize="3xl" textAlign="center" fontWeight='bold'>
           Find contacts by name

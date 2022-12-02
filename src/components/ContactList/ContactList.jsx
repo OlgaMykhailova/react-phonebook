@@ -19,8 +19,8 @@ export const ContactList = () => {
 
   return (
     <Flex justifyContent="center">
-      <Box minW="600px">
-        <Flex justifyContent="center">
+      <Box minW="500px">
+        <Flex justifyContent="center" p="12">
           <List p="12">
             {getVisibleContacts().map(contact => (
               <ContactListItem
