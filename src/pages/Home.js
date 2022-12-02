@@ -37,7 +37,7 @@ export default function Home() {
           </Heading>
         )}
         <Text fontSize={['md', null, '2xl', null]}>
-          Contacts book is easy way to keep your contacts safe and always at
+          Contact book is easy way to keep your contacts safe and always at
           hand. You can add contacts, delete or easily find them.
         </Text>
       </Box>
