@@ -52,7 +52,7 @@ export const ContactForm = () => {
         >
           <Form>
             <FormLabel m='0'>
-              <Text display="block" py="2" fontSize="3xl">
+              <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
                 Name
               </Text>
               <Input
@@ -66,7 +66,7 @@ export const ContactForm = () => {
               <ErrorMessage name="name" component="span"></ErrorMessage>
             </FormLabel>
             <FormLabel m='0'>
-              <Text display="block" py="2" fontSize="3xl">
+              <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
                 Number
               </Text>
               <Input

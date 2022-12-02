@@ -43,7 +43,7 @@ export const RegisterForm = () => {
       >
         <form onSubmit={handleSubmit} autoComplete="on">
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize="3xl">
+            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
               Username
             </Text>
             <Input
@@ -56,7 +56,7 @@ export const RegisterForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize="3xl">
+            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
               Email
             </Text>
             <Input
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize="3xl">
+            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
               Password
             </Text>
             <Input
@@ -97,7 +97,7 @@ export const RegisterForm = () => {
               Register
             </Button>
           </Flex>
-          <Text textAlign="center" mt='4'>
+          <Text textAlign="center" mt='4' fontSize={['lg', null, "3xl", null]}>
             Already registered?
             <Link
               as={NavLink}

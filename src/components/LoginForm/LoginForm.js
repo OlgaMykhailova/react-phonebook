@@ -29,7 +29,7 @@ export const LoginForm = () => {
       >
         <form onSubmit={handleSubmit} autoComplete="off">
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize="3xl">
+            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
               Email
             </Text>
             <Input
@@ -42,7 +42,7 @@ export const LoginForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize="3xl">
+            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
               Password
             </Text>
             <Input
@@ -69,7 +69,7 @@ export const LoginForm = () => {
             LogIn
           </Button>
          </Flex>
-         <Text textAlign="center" mt='4'>
+         <Text textAlign="center" mt='4' fontSize={['lg', null, "3xl", null]}>
          Don't have an account?
             <Link
               as={NavLink}

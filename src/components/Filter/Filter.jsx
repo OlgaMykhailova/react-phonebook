@@ -9,26 +9,24 @@ export const Filter = () => {
   const dispatch = useDispatch();
 
   return (
-    
-      <Flex justifyContent='center'>
-        <Box minW='480px' m='0'>
-      <FormLabel m='0'>
-        <Text py='12'  fontSize="3xl" textAlign="center" fontWeight='bold'>
-          Find contacts by name
-        </Text>
-        <Input
-          variant="filled"
-          size="lg"
-          placeholder="Find your contact"
-          type="text"
-          name="filter"
-          value={filter}
-          onChange={e => dispatch(changeFilter(e.currentTarget.value))}
-        ></Input>
-      </FormLabel>
+    <Flex justifyContent="center">
+      <Box minW={[400, null, 480, null]} m="0">
+        <FormLabel m="0">
+          <Text py="12" fontSize="3xl" textAlign="center" fontWeight="bold">
+            Find contacts by name
+          </Text>
+          <Input
+            variant="filled"
+            size="lg"
+            placeholder="Find your contact"
+            type="text"
+            name="filter"
+            value={filter}
+            onChange={e => dispatch(changeFilter(e.currentTarget.value))}
+          ></Input>
+        </FormLabel>
       </Box>
     </Flex>
-   
   );
 };
 

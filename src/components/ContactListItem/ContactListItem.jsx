@@ -11,19 +11,30 @@ export const ContactListItem = ({ id, name, number }) => {
     dispatch(deleteContact(id));
   };
   return (
-    <ListItem key={id} minW='470px'>
-      <Flex justifyContent='space-between' alignItems='center'>
-                <Text >
-          Name: 
-          <Text color="white" display="inline-block" ml="2" mr='4'>
+    <ListItem key={id} minW={[400, null, 480, null]}>
+      <Flex justifyContent="space-between" alignItems="center" w='100%'>
+        <Text fontSize={['lg', null, '2xl', 'null' ]}>
+          Name:
+          <Text color="white" display="inline-block" ml="2" mr="4">
             {name}
           </Text>
-          Number: 
+          Number:
           <Text color="white" display="inline-block" ml="2">
             {number}
           </Text>
         </Text>
-        <Button variant="outline" colorScheme='black' size='xs' _hover={{ color: 'white' }} bg='teal.400' fontWeight='normal' transition='color 250ms cubic-bezier(0.4, 0, 0.2, 1)' ml='auto' type="button" onClick={() => handleDeleteContact(id)}>
+        <Button
+          variant="outline"
+          colorScheme="black"
+          size="xs"
+          _hover={{ color: 'white' }}
+          bg="teal.400"
+          fontWeight="normal"
+          transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+          ml={['5', null, "auto", null]}
+          type="button"
+          onClick={() => handleDeleteContact(id)}
+        >
           Delete
         </Button>
       </Flex>
