@@ -17,10 +17,16 @@ export default function Contacts() {
 
   return (
     <>
-      <Heading as='h2' size='xl' textAlign='center' mb='7'>Contacts</Heading>
+      <Heading as="h2" size="xl" textAlign="center" mb="7">
+        Contacts
+      </Heading>
       <ContactForm></ContactForm>
-      <div>{isLoading && 'Request in progress'}</div>
       <Filter></Filter>
+      {isLoading && (
+        <Heading as="h2" size="xl" textAlign="center" mb="7">
+          Request in progress
+        </Heading>
+      )}
       <ContactList></ContactList>
     </>
   );

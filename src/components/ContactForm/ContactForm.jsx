@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
 import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
-
 import { Form, Field, ErrorMessage } from 'formik';
 
 const schema = yup.object().shape({
@@ -44,15 +43,21 @@ export const ContactForm = () => {
 
   return (
     <Flex alignItems="center" justifyContent="center">
-      <Box minW="400px" minH='380px' boxShadow="dark-lg" p="5" borderRadius='lg'>
+      <Box
+        minW="400px"
+        minH="380px"
+        boxShadow="dark-lg"
+        p="5"
+        borderRadius="lg"
+      >
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}
           validationSchema={schema}
         >
           <Form>
-            <FormLabel m='0'>
-              <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <FormLabel m="0">
+              <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
                 Name
               </Text>
               <Input
@@ -65,8 +70,8 @@ export const ContactForm = () => {
               ></Input>
               <ErrorMessage name="name" component="span"></ErrorMessage>
             </FormLabel>
-            <FormLabel m='0'>
-              <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <FormLabel m="0">
+              <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
                 Number
               </Text>
               <Input
@@ -79,8 +84,17 @@ export const ContactForm = () => {
               ></Input>
               <ErrorMessage name="number" component="span"></ErrorMessage>
             </FormLabel>
-            <Flex justifyContent="center" mt='12'>
-              <Button variant="outline" colorScheme='black' type="submit" fontWeight='normal' bg='teal.400' fontSize="2xl" _hover={{ color: 'white' }} transition='color 250ms cubic-bezier(0.4, 0, 0.2, 1)'>
+            <Flex justifyContent="center" mt="12">
+              <Button
+                variant="outline"
+                colorScheme="black"
+                type="submit"
+                fontWeight="normal"
+                bg="teal.400"
+                fontSize="2xl"
+                _hover={{ color: 'white' }}
+                transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+              >
                 Add contact
               </Button>
             </Flex>

@@ -22,37 +22,50 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Container maxW="container.lg" minH='container.lg' minW={['450px', null, '800px', null]} p='7' boxShadow='dark-lg' bg='teal.300'>
-      {isRefreshing ? <b>Refreshing User...</b> : (
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute
-                redirectTo="/contacts"
-                component={<RegisterPage />}
-              />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute
-                redirectTo="/contacts"
-                component={<LoginPage />}
-              />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-            }
-          />
-        </Route>
-      </Routes>)}
+    <Container
+      maxW="container.lg"
+      minH="container.lg"
+      minW={['450px', null, '800px', null]}
+      p="7"
+      boxShadow="dark-lg"
+      bg="teal.300"
+    >
+      {isRefreshing ? (
+        <b>Refreshing User...</b>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<RegisterPage />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+          </Route>
+        </Routes>
+      )}
     </Container>
   );
 };

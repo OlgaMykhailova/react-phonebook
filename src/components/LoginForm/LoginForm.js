@@ -1,6 +1,14 @@
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Button, Flex, FormLabel, Text, Box, Input, Link } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  FormLabel,
+  Text,
+  Box,
+  Input,
+  Link,
+} from '@chakra-ui/react';
 import { logIn } from 'redux/auth/authOperations';
 
 export const LoginForm = () => {
@@ -29,7 +37,7 @@ export const LoginForm = () => {
       >
         <form onSubmit={handleSubmit} autoComplete="off">
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Email
             </Text>
             <Input
@@ -42,7 +50,7 @@ export const LoginForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Password
             </Text>
             <Input
@@ -54,33 +62,36 @@ export const LoginForm = () => {
               placeholder="Enter your password"
             ></Input>
           </FormLabel>
-         <Flex justifyContent="center" mt="12">
-         <Button
-         size='sm'
-            variant="outline"
-            colorScheme="black"
-            fontWeight="normal"
-            bg="teal.400"
-            fontSize="2xl"
-            _hover={{ color: 'white' }}
-            transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
-            type="submit"
-          >
-            LogIn
-          </Button>
-         </Flex>
-         <Text textAlign="center" mt='4' fontSize={['lg', null, "3xl", null]}>
-         Don't have an account?
+          <Flex justifyContent="center" mt="12">
+            <Button
+              size="sm"
+              variant="outline"
+              colorScheme="black"
+              fontWeight="normal"
+              bg="teal.400"
+              fontSize="2xl"
+              _hover={{ color: 'white' }}
+              transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+              type="submit"
+            >
+              LogIn
+            </Button>
+          </Flex>
+          <Flex justifyContent="center" alignItems="center" mt="4">
+            <Text textAlign="center" fontSize={['lg', null, '3xl', null]}>
+              Don't have an account?
+            </Text>
             <Link
               as={NavLink}
               to="/register"
-              ml='2'
+              ml="2"
+              fontSize={['lg', null, '3xl', null]}
               _hover={{ color: 'white' }}
               transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
             >
               Sign up
             </Link>
-          </Text>
+          </Flex>
         </form>
       </Box>
     </Flex>

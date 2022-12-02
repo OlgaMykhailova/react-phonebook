@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Notify } from 'notiflix';
 import { deleteContact } from '../../redux/contacts/contactsOperations';
-import { ListItem, Text, Button, Flex } from '@chakra-ui/react';
+import { chakra, ListItem, Text, Button, Flex } from '@chakra-ui/react';
 
 export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -12,16 +12,16 @@ export const ContactListItem = ({ id, name, number }) => {
   };
   return (
     <ListItem key={id} minW={[400, null, 480, null]}>
-      <Flex justifyContent="space-between" alignItems="center" w='100%'>
-        <Text fontSize={['lg', null, '2xl', 'null' ]}>
+      <Flex justifyContent="space-between" alignItems="center" w="100%">
+        <Text fontSize={['lg', null, '2xl', 'null']}>
           Name:
-          <Text color="white" display="inline-block" ml="2" mr="4">
+          <chakra.span color="white" ml="2" mr="4">
             {name}
-          </Text>
+          </chakra.span>
           Number:
-          <Text color="white" display="inline-block" ml="2">
+          <chakra.span color="white" ml="2">
             {number}
-          </Text>
+          </chakra.span>
         </Text>
         <Button
           variant="outline"
@@ -31,7 +31,7 @@ export const ContactListItem = ({ id, name, number }) => {
           bg="teal.400"
           fontWeight="normal"
           transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
-          ml={['5', null, "auto", null]}
+          ml={['5', null, 'auto', null]}
           type="button"
           onClick={() => handleDeleteContact(id)}
         >

@@ -43,7 +43,7 @@ export const RegisterForm = () => {
       >
         <form onSubmit={handleSubmit} autoComplete="on">
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Username
             </Text>
             <Input
@@ -56,7 +56,7 @@ export const RegisterForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Email
             </Text>
             <Input
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
             ></Input>
           </FormLabel>
           <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, "3xl", null]}>
+            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Password
             </Text>
             <Input
@@ -81,7 +81,7 @@ export const RegisterForm = () => {
               placeholder="Enter your password"
             ></Input>
           </FormLabel>
-          <Flex justifyContent="center" >
+          <Flex justifyContent="center">
             <Button
               size="sm"
               mt="8"
@@ -97,18 +97,21 @@ export const RegisterForm = () => {
               Register
             </Button>
           </Flex>
-          <Text textAlign="center" mt='4' fontSize={['lg', null, "3xl", null]}>
-            Already registered?
+          <Flex justifyContent="center" alignItems="center" mt="4">
+            <Text textAlign="center" fontSize={['lg', null, '3xl', null]}>
+              Already registered?
+            </Text>
             <Link
               as={NavLink}
               to="/login"
-              ml='2'
+              ml="2"
+              fontSize={['lg', null, '3xl', null]}
               _hover={{ color: 'white' }}
               transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
             >
               Sign in
             </Link>
-          </Text>
+          </Flex>
         </form>
       </Box>
     </Flex>
