@@ -1,3 +1,5 @@
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import {
@@ -11,19 +13,31 @@ import {
 } from '@chakra-ui/react';
 import { logIn } from 'redux/auth/authOperations';
 
+const schema = yup.object().shape({
+  email: yup.string().email().required(),
+  password: yup
+    .string()
+    .required('No password provided.')
+    .min(8, 'Password is too short - should be 8 characters minimum.')
+    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+});
+
 export const LoginForm = () => {
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
+  const handleSubmit = (values, actions) => {
+       dispatch(
       logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        email: values.email,
+        password: values.password,
       })
     );
-    form.reset();
+    actions.resetForm();
   };
 
   return (
@@ -35,12 +49,14 @@ export const LoginForm = () => {
         p="5"
         borderRadius="lg"
       >
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
+          <Form>
           <FormLabel m="0">
             <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Email
             </Text>
             <Input
+            as={Field}
               variant="filled"
               autoComplete="on"
               size="lg"
@@ -48,12 +64,14 @@ export const LoginForm = () => {
               name="email"
               placeholder="Enter your email"
             ></Input>
+            <ErrorMessage name="email" component="span"></ErrorMessage>
           </FormLabel>
           <FormLabel m="0">
             <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
               Password
             </Text>
             <Input
+            as={Field}
               variant="filled"
               autoComplete="on"
               size="lg"
@@ -61,6 +79,7 @@ export const LoginForm = () => {
               name="password"
               placeholder="Enter your password"
             ></Input>
+            <ErrorMessage name="password" component="span"></ErrorMessage>
           </FormLabel>
           <Flex justifyContent="center" mt="12">
             <Button
@@ -92,7 +111,8 @@ export const LoginForm = () => {
               Sign up
             </Link>
           </Flex>
-        </form>
+          </Form>
+        </Formik>
       </Box>
     </Flex>
   );
