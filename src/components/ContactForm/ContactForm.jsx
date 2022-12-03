@@ -1,11 +1,11 @@
-import { Formik } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Notify } from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
 import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
-import { Form, Field, ErrorMessage } from 'formik';
+
 
 const schema = yup.object().shape({
   name: yup.string().required(),
