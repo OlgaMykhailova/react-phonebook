@@ -31,7 +31,7 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-       dispatch(
+    dispatch(
       logIn({
         email: values.email,
         password: values.password,
@@ -49,68 +49,72 @@ export const LoginForm = () => {
         p="5"
         borderRadius="lg"
       >
-        <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={schema}
+        >
           <Form>
-          <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
-              Email
-            </Text>
-            <Input
-            as={Field}
-              variant="filled"
-              autoComplete="on"
-              size="lg"
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-            ></Input>
-            <ErrorMessage name="email" component="span"></ErrorMessage>
-          </FormLabel>
-          <FormLabel m="0">
-            <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
-              Password
-            </Text>
-            <Input
-            as={Field}
-              variant="filled"
-              autoComplete="on"
-              size="lg"
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-            ></Input>
-            <ErrorMessage name="password" component="span"></ErrorMessage>
-          </FormLabel>
-          <Flex justifyContent="center" mt="12">
-            <Button
-              size="sm"
-              variant="outline"
-              colorScheme="black"
-              fontWeight="normal"
-              bg="teal.400"
-              fontSize="2xl"
-              _hover={{ color: 'white' }}
-              transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
-              type="submit"
-            >
-              LogIn
-            </Button>
-          </Flex>
-          <Flex justifyContent="center" alignItems="center" mt="4">
-            <Text textAlign="center" fontSize={['lg', null, '3xl', null]}>
-              Don't have an account?
-            </Text>
-            <Link
-              as={NavLink}
-              to="/register"
-              ml="2"
-              fontSize={['lg', null, '3xl', null]}
-              _hover={{ color: 'white' }}
-              transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
-            >
-              Sign up
-            </Link>
-          </Flex>
+            <FormLabel m="0">
+              <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
+                Email
+              </Text>
+              <Input
+                as={Field}
+                variant="filled"
+                autoComplete="on"
+                size="lg"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+              ></Input>
+              <ErrorMessage name="email" component="span"></ErrorMessage>
+            </FormLabel>
+            <FormLabel m="0">
+              <Text display="block" py="2" fontSize={['lg', null, '3xl', null]}>
+                Password
+              </Text>
+              <Input
+                as={Field}
+                variant="filled"
+                autoComplete="on"
+                size="lg"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+              ></Input>
+              <ErrorMessage name="password" component="span"></ErrorMessage>
+            </FormLabel>
+            <Flex justifyContent="center" mt="12">
+              <Button
+                size="sm"
+                variant="outline"
+                colorScheme="black"
+                fontWeight="normal"
+                bg="teal.400"
+                fontSize="2xl"
+                _hover={{ color: 'white' }}
+                transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+                type="submit"
+              >
+                LogIn
+              </Button>
+            </Flex>
+            <Flex justifyContent="center" alignItems="center" mt="4">
+              <Text textAlign="center" fontSize={['lg', null, '3xl', null]}>
+                Don't have an account?
+              </Text>
+              <Link
+                as={NavLink}
+                to="/register"
+                ml="2"
+                fontSize={['lg', null, '3xl', null]}
+                _hover={{ color: 'white' }}
+                transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
+              >
+                Sign up
+              </Link>
+            </Flex>
           </Form>
         </Formik>
       </Box>

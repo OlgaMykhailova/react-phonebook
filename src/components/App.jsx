@@ -31,14 +31,14 @@ export const App = () => {
       bg="teal.300"
     >
       {isRefreshing ? (
-                  <Heading
-                  as="h2"
-                  fontSize={['lg', null, '4xl', null]}
-                  textAlign="center"
-                  mb="7"
-                >
-                Refreshing user...
-                </Heading>
+        <Heading
+          as="h2"
+          fontSize={['lg', null, '4xl', null]}
+          textAlign="center"
+          mb="7"
+        >
+          Refreshing user...
+        </Heading>
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -46,19 +46,13 @@ export const App = () => {
             <Route
               path="/register"
               element={
-                <RestrictedRoute
-                  redirectTo="/"
-                  component={<RegisterPage />}
-                />
+                <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
               }
             />
             <Route
               path="/login"
               element={
-                <RestrictedRoute
-                  redirectTo="/"
-                  component={<LoginPage />}
-                />
+                <RestrictedRoute redirectTo="/" component={<LoginPage />} />
               }
             />
             <Route

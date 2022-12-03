@@ -6,7 +6,6 @@ import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
 import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
 
-
 const schema = yup.object().shape({
   name: yup.string().required(),
   number: yup.number().positive().integer().required(),

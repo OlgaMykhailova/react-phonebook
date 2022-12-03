@@ -31,7 +31,7 @@ export const RegisterForm = () => {
   };
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-      dispatch(
+    dispatch(
       register({
         name: values.name,
         email: values.email,
@@ -91,7 +91,7 @@ export const RegisterForm = () => {
                 Password
               </Text>
               <Input
-              as={Field}
+                as={Field}
                 autoComplete="on"
                 variant="filled"
                 size="lg"
