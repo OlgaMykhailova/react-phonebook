@@ -21,7 +21,7 @@ export const UserMenu = () => {
         transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
         variant="link"
         fontWeight="normal"
-        ml={['1', null, '5', null]}
+        ml={['0.5', null, '5', null]}
         fontSize={['xl', null, '4xl', 'null']}
         type="button"
         onClick={() => dispatch(logOut())}

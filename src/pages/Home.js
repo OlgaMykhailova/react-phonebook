@@ -16,7 +16,7 @@ export default function Home() {
       borderRadius="lg"
     >
       <FaAddressBook size="300px" />
-      <Box p={['3', null, '8', null]} maxW="500px">
+      <Box p={['1', null, '8', null]} maxW="500px">
         {isLoggedIn ? (
           <Heading
             as="h2"

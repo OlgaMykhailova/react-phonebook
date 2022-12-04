@@ -12,7 +12,7 @@ export const Navigation = () => {
       <FaAddressBook size="32" />
       <Link
         as={NavLink}
-        ml="5"
+        ml={['0.5', null, '5', null]}
         fontSize={['xl', null, '4xl', null]}
         _activeLink={{ color: 'white' }}
         _hover={{ color: 'white' }}
@@ -24,7 +24,7 @@ export const Navigation = () => {
       {isLoggedIn && (
         <Link
           as={NavLink}
-          ml="5"
+          ml={['0.5', null, '5', null]}
           fontSize={['xl', null, '4xl', null]}
           _activeLink={{ color: 'white' }}
           _hover={{ color: 'white' }}
