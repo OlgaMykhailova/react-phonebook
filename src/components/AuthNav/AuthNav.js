@@ -17,7 +17,7 @@ export const AuthNav = () => {
       </Link>
       <Link
         as={NavLink}
-        ml={['2', null, '5', null]}
+        ml={['1', null, '5', null]}
         fontSize={['xl', null, '4xl', null]}
         _activeLink={{ color: 'white' }}
         _hover={{ color: 'white' }}

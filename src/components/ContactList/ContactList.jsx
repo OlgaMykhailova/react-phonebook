@@ -21,7 +21,7 @@ export const ContactList = () => {
     <>
       {contacts.length > 0 ? (
         <Flex justifyContent="center" alignItems="center" py="4">
-          <List maxW={[420, null, 500, null]} py="4" w="100%">
+          <List maxW={[350, null, 500, null]} py="4" w="100%">
             {getVisibleContacts().map(contact => (
               <ContactListItem
                 key={contact.id}
