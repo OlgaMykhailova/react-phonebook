@@ -10,13 +10,13 @@ export default function Home() {
       justifyContent="space-between"
       alignItems="center"
       py={['16', null, '32', null]}
-      px="10"
+      px={['4', null, '10', null]}
       mt="10"
       boxShadow="dark-lg"
       borderRadius="lg"
     >
       <FaAddressBook size="300px" />
-      <Box p={['1', null, '8', null]} maxW="500px">
+      <Box ml={['3', null, '8', null]} p={['1', null, '8', null]} maxW="500px">
         {isLoggedIn ? (
           <Heading
             as="h2"

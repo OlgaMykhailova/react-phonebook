@@ -7,7 +7,7 @@ export const AuthNav = () => {
       <Link
         as={NavLink}
         ml="5"
-        fontSize={['xl', null, '4xl', null]}
+        fontSize={['lg', null, '4xl', null]}
         _activeLink={{ color: 'white' }}
         _hover={{ color: 'white' }}
         transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
@@ -17,8 +17,8 @@ export const AuthNav = () => {
       </Link>
       <Link
         as={NavLink}
-        ml={['0.5', null, '5', null]}
-        fontSize={['xl', null, '4xl', null]}
+        ml={['1', null, '5', null]}
+        fontSize={['lg', null, '4xl', null]}
         _activeLink={{ color: 'white' }}
         _hover={{ color: 'white' }}
         transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"

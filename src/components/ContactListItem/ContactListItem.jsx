@@ -13,7 +13,7 @@ export const ContactListItem = ({ id, name, number }) => {
   return (
     <ListItem key={id} minW={[300, null, 480, null]}>
       <Flex justifyContent="space-between" alignItems="center" w="100%">
-        <Text fontSize={['lg', null, '2xl', 'null']}>
+        <Text fontSize={['sm', null, '2xl', 'null']}>
           Name:
           <chakra.span color="white" ml="2" mr="4">
             {name}
