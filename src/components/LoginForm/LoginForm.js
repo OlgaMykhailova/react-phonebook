@@ -43,7 +43,7 @@ export const LoginForm = () => {
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
-        minW="400px"
+        minW="350px"
         minH="380px"
         boxShadow="dark-lg"
         p="5"
