@@ -44,7 +44,7 @@ export const RegisterForm = () => {
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
-        minW="350px"
+        minW="300px"
         minH="400px"
         boxShadow="dark-lg"
         p="5"

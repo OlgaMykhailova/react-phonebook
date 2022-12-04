@@ -25,7 +25,7 @@ export const App = () => {
     <Container
       maxW="container.lg"
       minH="container.lg"
-      minW={['400px', null, '800px', null]}
+      minW={['350px', null, '800px', null]}
       p="7"
       boxShadow="dark-lg"
       bg="teal.300"
