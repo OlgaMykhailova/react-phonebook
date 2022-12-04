@@ -43,7 +43,7 @@ export const ContactForm = () => {
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
-        minW="300px"
+        minW={[300, null, 480, null]}
         minH="380px"
         boxShadow="dark-lg"
         p="5"

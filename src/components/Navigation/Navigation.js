@@ -1,6 +1,6 @@
 import { useAuth } from 'hooks';
 import { FaAddressBook } from 'react-icons/fa';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Show } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import { Link } from '@chakra-ui/react';
 
@@ -9,11 +9,11 @@ export const Navigation = () => {
 
   return (
     <Flex alignItems="center">
-      <FaAddressBook size='32' />
+      <Show above='md'><FaAddressBook size='32'/></Show>
       <Link
         as={NavLink}
         ml={['1', null, '5', null]}
-        fontSize={['lg', null, '4xl', null]}
+        fontSize={['xl', null, '4xl', null]}
         _activeLink={{ color: 'white' }}
         _hover={{ color: 'white' }}
         transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
@@ -24,8 +24,8 @@ export const Navigation = () => {
       {isLoggedIn && (
         <Link
           as={NavLink}
-          ml={['1', null, '5', null]}
-          fontSize={['lg', null, '4xl', null]}
+          ml={['2', null, '5', null]}
+          fontSize={['xl', null, '4xl', null]}
           _activeLink={{ color: 'white' }}
           _hover={{ color: 'white' }}
           transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
