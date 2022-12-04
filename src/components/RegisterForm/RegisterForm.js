@@ -109,7 +109,7 @@ export const RegisterForm = () => {
                 colorScheme="black"
                 fontWeight="normal"
                 bg="teal.400"
-                fontSize="2xl"
+                fontSize={['lg', null, '2xl', null]}
                 _hover={{ color: 'white' }}
                 transition="color 250ms cubic-bezier(0.4, 0, 0.2, 1)"
                 type="submit"
