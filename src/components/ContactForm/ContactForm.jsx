@@ -22,7 +22,6 @@ export const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const newName = {
-      
       name: values.name,
       number: values.number,
     };
@@ -31,7 +30,6 @@ export const ContactForm = () => {
       contact => contact.name.toLowerCase() === newContactNameNormalized
     );
     const handleAddContact = newName => {
-      Notify.success(`${values.name} has been added to your contacts`);
       dispatch(addContact(newName));
     };
     findContact

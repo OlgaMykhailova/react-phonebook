@@ -1,14 +1,11 @@
-
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { Notify } from 'notiflix';
 import { deleteContact } from '../../redux/contacts/contactsOperations';
 import { chakra, ListItem, Text, Button, Flex } from '@chakra-ui/react';
 
 export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const handleDeleteContact = id => {
-    Notify.success(`${name} has been removed from your contacts`);
     dispatch(deleteContact(id));
   };
   return (
