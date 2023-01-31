@@ -22,7 +22,7 @@ export const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const newName = {
-      createdAt: new Date(),
+      
       name: values.name,
       number: values.number,
     };

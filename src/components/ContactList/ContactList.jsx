@@ -8,7 +8,7 @@ import { selectFilter } from '../../redux/filter/filterSelectors';
 export const ContactList = () => {
   const filter = useSelector(selectFilter);
   const contacts = useSelector(selectContacts);
-
+  
   const getVisibleContacts = () => {
     const normalizedFilter = filter.toLowerCase();
 
@@ -24,10 +24,10 @@ export const ContactList = () => {
           <List maxW={[350, null, 500, null]} py="4" w="100%">
             {getVisibleContacts().map(contact => (
               <ContactListItem
-                key={contact.id}
+                key={contact._id}
                 name={contact.name}
                 number={contact.number}
-                id={contact.id}
+                id={contact._id}
               />
             ))}
           </List>

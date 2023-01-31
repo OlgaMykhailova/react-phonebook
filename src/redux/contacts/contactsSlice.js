@@ -31,7 +31,7 @@ const addContactSuccessReducer = (state, action) => {
 };
 
 const deleteContactSuccessReducer = (state, action) => {
-  state.items = state.items.filter(contact => contact.id !== action.payload.id);
+  state.items = state.items.filter(contact => contact._id !== action.payload._id);
 };
 
 const initialState = {
