@@ -10,7 +10,7 @@ React, Redux, WebPack, Chakra UI, Formik, Yup, REST API, NodeJS, Express, MongoD
 
 Contact book is an application for keeping, adding or deleting contacts for diffrent users.
 
-![Registration page](./src/assets/registration-page.jpg)
+![Registration page](./assets/registration-page.jpg)
 ![Login page](./src/assets/login-page.jpg)
 ![Create post](./src/assets/create-post.jpg)
 ![Posts page](./src/assets/posts-page.jpg)
