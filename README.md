@@ -10,15 +10,15 @@ React, Redux, WebPack, Chakra UI, Formik, Yup, REST API, NodeJS, Express, MongoD
 
 Contact book is an application for keeping, adding or deleting contacts for diffrent users.
 
-![Registration page](./assets/Screenshot_5.png)
-![Login page](./src/assets/login-page.jpg)
-![Create post](./src/assets/create-post.jpg)
-![Posts page](./src/assets/posts-page.jpg)
-![Comments](./src/assets/comments.jpg)
+![Home page](./assets/home-page.png)
+![Registration page](./assets/registration-page.png)
+![Private home page](./assets/private-home-page.png)
+![Contacts page](./assets/contacts-page.png)
+
 
 ## Deploy
 
-[Link](https://olgamykhailova.github.io/goit-react-hw-08-phonebook/)
+[Link](https://olgamykhailova.github.io/react-phonebook/)
 
 ## Project setup
 
