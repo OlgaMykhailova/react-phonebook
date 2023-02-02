@@ -22,7 +22,7 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      Notify.failure(`Something wrong - ${error.message}`);
+      Notify.failure(`Something wrong - ${error}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
