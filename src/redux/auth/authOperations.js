@@ -22,8 +22,8 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      Notify.failure(`Something wrong - ${error}`);
-      return thunkAPI.rejectWithValue(error.message);
+      Notify.failure(`Something wrong - ${error.response.data.message}`);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -36,8 +36,8 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      Notify.failure(`Something wrong - ${error.message}`);
-      return thunkAPI.rejectWithValue(error.message);
+      Notify.failure(`Something wrong - ${error.response.data.message}`);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -47,8 +47,8 @@ export const logOut = createAsyncThunk('users/logout', async (_, thunkAPI) => {
     await axios.post('users/logout');
     clearAuthHeader();
   } catch (error) {
-    Notify.failure(`Something wrong - ${error.message}`);
-    return thunkAPI.rejectWithValue(error.message);
+    Notify.failure(`Something wrong - ${error.response.data.message}`);
+    return thunkAPI.rejectWithValue(error.response.data.message);
   }
 });
 
@@ -67,8 +67,8 @@ export const refreshUser = createAsyncThunk(
       const response = await axios.get('users/current');
       return response.data;
     } catch (error) {
-      console.log(`Something wrong - ${error.message}`);
-      return thunkAPI.rejectWithValue(error.message);
+      console.log(`Something wrong - ${error.response.data.message}`);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );

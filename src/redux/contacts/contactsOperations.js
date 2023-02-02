@@ -11,8 +11,8 @@ export const fetchContacts = createAsyncThunk(
       const response = await axios.get('/contacts');
       return response.data;
     } catch (e) {
-      Notify.failure(`Something wrong - ${e.message}`);
-      return thunkAPI.rejectWithValue(e.message);
+      Notify.failure(`Something wrong - ${e.response.data.message}`);
+      return thunkAPI.rejectWithValue(e.response.data.message);
     }
   }
 );
@@ -25,8 +25,8 @@ export const addContact = createAsyncThunk(
       Notify.success(`${response.data.name} has been added to your contacts`);
       return response.data;
     } catch (e) {
-      Notify.failure(`Something wrong - ${e.message}`);
-      return thunkAPI.rejectWithValue(e.message);
+      Notify.failure(`Something wrong - ${e.response.data.message}`);
+      return thunkAPI.rejectWithValue(e.response.data.message);
     }
   }
 );
@@ -36,11 +36,13 @@ export const deleteContact = createAsyncThunk(
   async (contactId, thunkAPI) => {
     try {
       const response = await axios.delete(`/contacts/${contactId}`);
-      Notify.success(`${response.data.name} has been deleted from your contacts`);
+      Notify.success(
+        `${response.data.name} has been deleted from your contacts`
+      );
       return response.data;
     } catch (e) {
-      Notify.failure(`Something wrong - ${e.message}`);
-      return thunkAPI.rejectWithValue(e.message);
+      Notify.failure(`Something wrong - ${e.response.data.message}`);
+      return thunkAPI.rejectWithValue(e.response.data.message);
     }
   }
 );
