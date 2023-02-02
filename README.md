@@ -6,9 +6,9 @@ React, Redux, WebPack, Chakra UI, Formik, Yup, REST API, NodeJS, Express, MongoD
 
 ## Description
 
-[Live Demo Photo Application - Yotube](https://youtu.be/Wri-7jYoA0Q)
+[Live Demo Contact Book Application - Youtube](https://youtu.be/SRUNXeeRg7Y)
 
-Contact book is an application for keeping, adding or deleting contacts for diffrent users.
+Contact book is an application for keeping, adding or deleting contacts for different users.
 
 ![Home page](./assets/home-page.png)
 ![Registration page](./assets/registration-page.png)
