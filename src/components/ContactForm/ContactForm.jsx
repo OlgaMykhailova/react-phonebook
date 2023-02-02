@@ -1,6 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import MaskedInput from "react-text-mask";
 import { Notify } from 'notiflix';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
@@ -10,6 +12,23 @@ const schema = yup.object().shape({
   name: yup.string().required(),
   number: yup.number().positive().integer().required(),
 });
+
+const phoneNumberMask = [
+  "(",
+  /[1-9]/,
+  /\d/,
+  /\d/,
+  ")",
+  " ",
+  /\d/,
+  /\d/,
+  /\d/,
+  "-",
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/
+];
 
 export const ContactForm = () => {
   const initialValues = {
@@ -72,7 +91,8 @@ export const ContactForm = () => {
                 Number
               </Text>
               <Input
-                as={Field}
+                as={MaskedInput}
+                mask={phoneNumberMask}
                 variant="filled"
                 size="lg"
                 type="tel"
