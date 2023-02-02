@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="goit-react-hw-08-phonebook">
+        <BrowserRouter basename="react-phonebook">
           <Provider store={store}>
             <App />
           </Provider>
