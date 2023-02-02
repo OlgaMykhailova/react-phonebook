@@ -63,7 +63,7 @@ export const RegisterForm = () => {
               <Input
                 as={Field}
                 variant="filled"
-                autoComplete="on"
+                autoComplete="off"
                 size="lg"
                 type="text"
                 name="name"
