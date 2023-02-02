@@ -18,7 +18,7 @@ Contact book is an application for keeping, adding or deleting contacts for diff
 
 ## Deploy
 
-[Link](https://olgamykhailova.github.io/goit-react-hw-08-phonebook/)
+[Link](https://olgamykhailova.github.io/react-phonebook/)
 
 ## Project setup
 
