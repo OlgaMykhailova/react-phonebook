@@ -62,7 +62,7 @@ export const LoginForm = () => {
               <Input
                 as={Field}
                 variant="filled"
-                autoComplete="on"
+                autoComplete="off"
                 size="lg"
                 type="email"
                 name="email"
