@@ -13,9 +13,14 @@ import {
 } from '@chakra-ui/react';
 import { register } from 'redux/auth/authOperations';
 
+const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 const schema = yup.object().shape({
   name: yup.string().required(),
-  email: yup.string().email().required(),
+  email: yup
+    .string()
+    .matches(emailRegexp, 'Email must be in format mymail@mail.com')
+    .required(),
   password: yup
     .string()
     .required('No password provided.')

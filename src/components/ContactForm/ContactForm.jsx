@@ -1,6 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import MaskedInput from "react-text-mask";
 import { Notify } from 'notiflix';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,27 +7,15 @@ import { selectContacts } from '../../redux/contacts/contactsSelectors';
 import { addContact } from '../../redux/contacts/contactsOperations';
 import { Button, Flex, FormLabel, Text, Box, Input } from '@chakra-ui/react';
 
+const phoneRegexp = /^\(\d{3}\) \d{3}-\d{4}$/;
+
 const schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.number().positive().integer().required(),
+  number: yup
+    .string()
+    .matches(phoneRegexp, 'Enter phone number in format (123) 456-7890')
+    .required(),
 });
-
-const phoneNumberMask = [
-  "(",
-  /[1-9]/,
-  /\d/,
-  /\d/,
-  ")",
-  " ",
-  /\d/,
-  /\d/,
-  /\d/,
-  "-",
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/
-];
 
 export const ContactForm = () => {
   const initialValues = {
@@ -91,13 +78,12 @@ export const ContactForm = () => {
                 Number
               </Text>
               <Input
-                as={MaskedInput}
-                mask={phoneNumberMask}
+                as={Field}
                 variant="filled"
                 size="lg"
                 type="tel"
                 name="number"
-                placeholder="Enter phone number"
+                placeholder="Enter phone number in format (123) 456-7890"
               ></Input>
               <ErrorMessage name="number" component="span"></ErrorMessage>
             </FormLabel>
